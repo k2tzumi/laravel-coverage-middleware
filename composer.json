@@ -20,6 +20,13 @@
             "K2tzumi\\LaravelCoverageMiddleware\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "K2tzumi\\LaravelCoverageMiddleware\\Providers\\CoverageServiceProvider"
+            ]
+        }
+    },
     "authors": [
         {
             "name": "k2tzumi",
