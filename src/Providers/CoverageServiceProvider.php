@@ -66,6 +66,6 @@ class CoverageServiceProvider extends ServiceProvider
      */
     public function provides(): array
     {
-        return [Console\InstallCommand::class];
+        return [InstallCommand::class];
     }
 }
