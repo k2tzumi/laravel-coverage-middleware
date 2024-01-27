@@ -41,7 +41,7 @@ class CoverageServiceProvider extends ServiceProvider
         // Publishing the configuration file.
         $this->publishes([
             self::STUB_DIR.'/config/coverage.php' => config_path('coverage.php'),
-        ], 'config');
+        ], 'coverage-config');
         // Setup command
         $this->commands([
             InstallCommand::class,
@@ -55,7 +55,7 @@ class CoverageServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(
             self::STUB_DIR.'/config/coverage.php',
-            'coverage'
+            'coverage-config'
         );
     }
 
