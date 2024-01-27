@@ -8,7 +8,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Log;
 use K2tzumi\LaravelCoverageMiddleware\Http\Middleware\CollectCodeCoverage;
-use K2tzumi\LaravelCoverageMiddleware\Providers\Console\InstallCommand;
+use K2tzumi\LaravelCoverageMiddleware\Console\InstallCommand;
 
 /**
  * This provider will publish the necessary files in the specified directories.

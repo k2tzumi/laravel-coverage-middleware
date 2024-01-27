@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace K2tzumi\LaravelCoverageMiddleware\Providers\Console;
+namespace K2tzumi\LaravelCoverageMiddleware\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Console\PromptsForMissingInput;
@@ -9,7 +9,7 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use K2tzumi\LaravelCoverageMiddleware\Http\Middleware\CollectCodeCoverage;
 
 /**
- * @packages K2tzumi\LaravelCoverageMiddleware\Providers
+ * @packages K2tzumi\LaravelCoverageMiddleware\Console
  */
 class InstallCommand extends Command implements PromptsForMissingInput
 {
