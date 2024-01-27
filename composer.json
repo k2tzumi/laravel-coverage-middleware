@@ -49,5 +49,14 @@
         "platform": {
             "php": "8.2.0"
         }
+    },
+    "archive": {
+        "exclude": [
+            ".gitignore",
+            ".gitattributes",
+            "vendor",
+            ".git",
+            "tests"
+        ]
     }
 }
