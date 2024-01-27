@@ -19,7 +19,7 @@ class InstallCommand extends Command implements PromptsForMissingInput
      *
      * @var string
      */
-    protected $signature = 'coveage:install {group}';
+    protected $signature = 'coveage:install {group:Specify the middleware group from which to obtain coverage}';
 
     /**
      * The console command description.
