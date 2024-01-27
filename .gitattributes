@@ -3,3 +3,4 @@
 /vendor export-ignore
 /.git export-ignore
 /tests export-ignore
+/.github export-ignore

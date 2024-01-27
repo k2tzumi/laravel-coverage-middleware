@@ -56,7 +56,8 @@
             ".gitattributes",
             "vendor",
             ".git",
-            "tests"
+            "tests",
+            ".github"
         ]
     }
 }
