@@ -26,7 +26,7 @@ class CoverageServiceProvider extends ServiceProvider
         Log::info('CoverageServiceProvider boot method called.');
         // Register the middleware globally
         /** @var Kernel $kernel */
-        $kernel = $this->app->make(Kernel::class);
+        $kernel = $this->app->make('App\Http\Kernel');
         $kernel->pushMiddleware(CollectCodeCoverage::class);
 
         // Publishing is only necessary when using the CLI
