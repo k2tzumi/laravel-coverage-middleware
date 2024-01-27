@@ -6,6 +6,7 @@ namespace K2tzumi\LaravelCoverageMiddleware\Providers;
 use Illuminate\Foundation\Http\Kernel;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Log;
 use K2tzumi\LaravelCoverageMiddleware\Http\Middleware\CollectCodeCoverage;
 use K2tzumi\LaravelCoverageMiddleware\Providers\Console\InstallCommand;
 
@@ -22,6 +23,7 @@ class CoverageServiceProvider extends ServiceProvider
      */
     public function boot(Router $router): void
     {
+        Log::info('CoverageServiceProvider boot method called.');
         // Register the middleware globally
         /** @var Kernel $kernel */
         $kernel = $this->app->make(Kernel::class);
