@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace K2tzumi\LaravelCoverageMiddleware\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Illuminate\Contracts\Console\PromptsForMissingInput;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use K2tzumi\LaravelCoverageMiddleware\Http\Middleware\CollectCodeCoverage;
@@ -63,36 +64,19 @@ class InstallCommand extends Command implements PromptsForMissingInput
             throw new FileNotFoundException('Http/Kernel not found');
         }
 
-        $middlewareGroupRegex = "/protected\s+\${$group}Middleware\s*=\s*\[(.*?)\]/s";
-        preg_match($middlewareGroupRegex, $kernelContents, $middlewareGroupMatch);
+        $middlewareGroups = Str::before(Str::after($kernelContents, '$middlewareGroups = ['), '];');
+        $middlewareGroup = Str::before(Str::after($middlewareGroups, "'$group' => ["), '],');
 
-        if (empty($middlewareGroupMatch)) {
-            $this->line("Middleware group {$group} not found");
-            return;
+        if (!Str::contains($middlewareGroup, $name)) {
+            $modifiedMiddlewareGroup = $middlewareGroup . '    \\'.$name.'::class,'.PHP_EOL.'        ';
+
+            file_put_contents($kernelPath, str_replace(
+                $middlewareGroups,
+                str_replace($middlewareGroup, $modifiedMiddlewareGroup, $middlewareGroups),
+                $kernelContents
+            ));
+
+            $this->line("Middleware {$name} added to {$group} middleware group");
         }
-
-        $middlewareGroupContents = $middlewareGroupMatch[1];
-
-        $middlewareList = preg_split("/\r\n|\n|\r/", $middlewareGroupContents);
-        if ($middlewareList === false) {
-            throw new \UnexpectedValueException("Http/Kernel parsing failed. middlewareGroupContents: {$middlewareGroupContents}");
-        }
-        $middlewareList = array_map('trim', $middlewareList);
-        $middlewareList = array_filter($middlewareList);
-
-        if (in_array($name, $middlewareList)) {
-            $this->line("Middleware {$name} already exists in {$group} middleware group");
-            return;
-        }
-
-        $middleware_list[] = $name;
-
-        $middlewareGroupContents = implode("\n", $middlewareList);
-
-        $kernelContents = preg_replace($middlewareGroupRegex, "protected \${$group}Middleware = [{$middlewareGroupContents}]", $kernelContents);
-
-        file_put_contents($kernelPath, $kernelContents);
-
-        $this->line("Middleware {$name} added to {$group} middleware group");
     }
 }
