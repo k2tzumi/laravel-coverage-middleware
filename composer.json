@@ -66,7 +66,12 @@
             "vendor",
             ".git",
             "tests",
-            ".github"
+            ".github",
+            ".octocov.yml",
+            ".php-cs-fixer.dist.php",
+            ".tagpr",
+            "phpstan.neon",
+            "phpunit.xml"
         ]
     }
 }
