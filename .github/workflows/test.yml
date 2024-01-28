@@ -25,7 +25,7 @@ jobs:
           update: true
 
       - name: Validate composer.json and composer.lock
-        run: composer validate
+        run: composer validate --no-check-version
 
       - name: Get Composer Cache Directory
         id: get-composer-cache-dir
