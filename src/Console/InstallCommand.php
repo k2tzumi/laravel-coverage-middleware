@@ -37,7 +37,8 @@ class InstallCommand extends Command implements PromptsForMissingInput
     {
         $group = $this->argument('group');
         if ($group === null || is_string($group) !== true) {
-            $group = $this->prompt('Please specify the middleware group from which to obtain coverage');
+            $this->error('The group is required.');
+            return Command::FAILURE;
         }
 
         // Middleware...
