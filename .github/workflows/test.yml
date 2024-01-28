@@ -1,13 +1,14 @@
 name: tests
 on:
   pull_request:
-    paths:
-      - "!*.md"        
-  
+
 jobs:
   tests:
     name: PHP ${{ matrix.php }}
     runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}-test-${{ matrix.php }}
+      cancel-in-progress: true
 
     strategy:
       matrix:
@@ -27,7 +28,7 @@ jobs:
           update: true
 
       - name: Validate composer.json and composer.lock
-        run: composer validate
+        run: composer validate --no-check-version
 
       - name: Get Composer Cache Directory
         id: get-composer-cache-dir
@@ -43,7 +44,6 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ matrix.php }}-composer-
 
       - name: Install dependencies
-        if: steps.composer-cache.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-progress
 
       - name: test
