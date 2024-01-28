@@ -53,4 +53,5 @@ jobs:
         run: composer coverage
 
       - name: Report code coverage
+        if: matrix.php == matrix.php[0]
         uses: k1LoW/octocov-action@v0
