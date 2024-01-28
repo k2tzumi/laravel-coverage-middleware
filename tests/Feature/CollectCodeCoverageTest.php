@@ -81,7 +81,8 @@ class CollectCodeCoverageTest extends TestCase
     /**
      * @return CollectCodeCoverage
      */
-    private function createInstance() : CollectCodeCoverage {
+    private function createInstance() : CollectCodeCoverage
+    {
         return app(CollectCodeCoverage::class);
     }
 }
