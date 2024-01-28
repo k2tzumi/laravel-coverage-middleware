@@ -63,6 +63,7 @@ phpstan: $(PHPSTAN_STATUS) ## Run PHPStan with current project
 prerelease_for_tagpr:	## Change files just before release
 	@composer update
 	@git add CHANGELOG.md composer.json composer.lock
+	@git commit -m'Bump up version number'
 
 release:	## Run composer archive
 	@composer archive --format zip --file composer
