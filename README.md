@@ -1,3 +1,5 @@
+![test passsed](https://github.com/k2tzumi/laravel-coverage-middleware/actions/workflows/test.yml/badge.svg?branch=main)  
+
 # laravel-coverage-middleware
 HTTP middleware to get code coverage of Laravel applications on remote servers
 

@@ -1,3 +1,4 @@
+name: release
 on:
     # dispatch from tagpr.yml workflow
     workflow_dispatch:
