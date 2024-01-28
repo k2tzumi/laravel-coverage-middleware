@@ -17,7 +17,8 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "K2tzumi\\LaravelCoverageMiddleware\\": "src/"
+            "K2tzumi\\LaravelCoverageMiddleware\\": "src/",
+            "Tests\\": "tests/"
         }
     },
     "extra": {
@@ -35,15 +36,23 @@
     ],
     "scripts": {
         "test": [
+            "./vendor/bin/phpunit --configuration phpunit.xml"
+        ],
+        "lint": [
             "./vendor/bin/phpstan analyze"
         ],
         "fix-cs": [
             "php-cs-fixer fix --config=.php-cs-fixer.dist.php --verbose"
+        ],
+        "coverage": [
+            "./vendor/bin/phpunit --configuration phpunit.xml --coverage-clover coverage.xml"
         ]
     },
     "scripts-descriptions": {
         "test": "Runs all tests using PHPUnit",
-        "fix-cs": "Fixes PHP code style using PHP-CS-Fixer"
+        "lint": "Runs Code Static Analysis using PHPStan",
+        "fix-cs": "Fixes PHP code style using PHP-CS-Fixer",
+        "coverage": "Obtaining Code Coverage"
     },
     "config": {
         "platform": {
