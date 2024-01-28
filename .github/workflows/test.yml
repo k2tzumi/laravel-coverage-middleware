@@ -6,6 +6,9 @@ jobs:
   tests:
     name: PHP ${{ matrix.php }}
     runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
 
     strategy:
       matrix:
