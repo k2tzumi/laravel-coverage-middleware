@@ -86,14 +86,4 @@ class CollectCodeCoverage
 
         return $response;
     }
-
-    /**
-     * Determine if the middleware should be deferred.
-     *
-     * @return bool
-     */
-    public function isDeferred(): bool
-    {
-        return true;
-    }
 }
