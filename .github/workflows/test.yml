@@ -23,7 +23,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           tools: composer:v2
-          coverage: none
+          ini-values: pcov.directory=src
         env:
           update: true
 
@@ -46,5 +46,11 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-      - name: test
-        run: composer test
+      - name: lint
+        run: composer lint
+
+      - name: test & coverage
+        run: composer coverage
+
+      - name: Report code coverage
+        uses: k1LoW/octocov-action@v0
