@@ -33,3 +33,5 @@
 	vPrefix = false
 	releaseBranch = main
 	versionFile = composer.json
+	command = "make prerelease_for_tagpr"
+
