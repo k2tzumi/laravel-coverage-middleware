@@ -11,6 +11,7 @@ use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
 use SebastianBergmann\CodeCoverage\Filter;
 use SebastianBergmann\CodeCoverage\Report\PHP;
+use SebastianBergmann\CodeCoverage\NoCodeCoverageDriverAvailableException;
 use function is_array;
 
 /**
@@ -33,6 +34,9 @@ class CollectCodeCoverage
 
     const DEFALUT_HEADER_NAME = 'X-Runn-Trace';
 
+    /**
+     * @throws NoCodeCoverageDriverAvailableException
+     */
     public function __construct()
     {
         if (!isset(self::$filter)) {
@@ -81,5 +85,15 @@ class CollectCodeCoverage
         (new PHP())->process($this->coverage, storage_path("coverage/$runbookId-" . microtime(true)) . '.cov');
 
         return $response;
+    }
+
+    /**
+     * Determine if the middleware should be deferred.
+     *
+     * @return bool
+     */
+    public function isDeferred(): bool
+    {
+        return true;
     }
 }
