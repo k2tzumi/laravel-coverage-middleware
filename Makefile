@@ -11,10 +11,11 @@ FIXER_DIFF_STATUS := .fixer-diff.status
 PHPSTAN_STATUS := .phpstan/resultCache.php
 CS_FIXER_CACHE := .php-cs-fixer.cache
 COVERAGE_OBJ := coverage.xml
+CREDITS_OBJ := CREDITS
 
 .DEFAULT_GOAL := help
 
-.PHONY: help coverage install phpstan fixer fixer-all lint lint-all
+.PHONY: help coverage install phpstan fixer fixer-all lint lint-all credits
 
 $(COMPOSER_CACHE_SRCS):
 	@composer install
@@ -40,6 +41,9 @@ $(FIXER_DIFF_STATUS): $(COMPOSER_CACHE_SRCS) $(COMPOSER_AUTOLOAD_OBJ)
 $(COVERAGE_OBJ): $(COMPOSER_CACHE_SRCS) $(COMPOSER_AUTOLOAD_OBJ)
 	@$(COMPOSER_DIR)/bin/phpunit --configuration phpunit.xml --coverage-clover $@
 
+$(CREDITS_OBJ): composer.lock
+	@vendor/bin/php-vendor-credits . > $@
+
 help:
 	@grep -E '^[a-zA-Z_/%-]+:.*?## .*$$' Makefile | \
 		sort | \
@@ -60,9 +64,12 @@ fixer: $(FIXER_DIFF_STATUS) ## Run CS-Fixer with diff of default branch
 
 phpstan: $(PHPSTAN_STATUS) ## Run PHPStan with current project
 
+credits: $(CREDITS_OBJ)	## Create CREDITS
+
 prerelease_for_tagpr:	## Change files just before release
 	@composer update
-	@git add CHANGELOG.md composer.json composer.lock
+	@vendor/bin/php-vendor-credits . > $(CREDITS_OBJ)
+	@git add CHANGELOG.md composer.json composer.lock $(CREDITS_OBJ)
 
 release:	## Run composer archive
 	@composer archive --format zip --file composer
