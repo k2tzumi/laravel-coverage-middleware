@@ -12,7 +12,8 @@
     "require-dev": {
         "orchestra/testbench": "^8.20",
         "friendsofphp/php-cs-fixer": "^3.46",
-        "phpstan/phpstan": "^1.10"
+        "phpstan/phpstan": "^1.10",
+        "smeghead/php-vendor-credits": "dev-support-symfony-6.4"
     },
     "license": "MIT",
     "autoload": {
@@ -73,5 +74,11 @@
             "phpstan.neon",
             "phpunit.xml"
         ]
+    },
+    "repositories": {
+        "smeghead/php-vendor-credits": {
+            "type": "git",
+            "url": "https://github.com/k2tzumi/php-vendor-credits.git"
+        }
     }
 }
