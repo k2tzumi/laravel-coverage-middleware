@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96706476df48c4f33ad473110960cf81",
+    "content-hash": "37af2071ca1fda50031d84f42f4b0f93",
     "packages": [
         {
             "name": "brick/math",
@@ -1382,16 +1382,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "b6a5854368533df0295c5761a0253656a2e52d9e"
+                "reference": "ce0f4d1e8a6f4eb0ddff33f57c69c50fd09f4301"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/b6a5854368533df0295c5761a0253656a2e52d9e",
-                "reference": "b6a5854368533df0295c5761a0253656a2e52d9e",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/ce0f4d1e8a6f4eb0ddff33f57c69c50fd09f4301",
+                "reference": "ce0f4d1e8a6f4eb0ddff33f57c69c50fd09f4301",
                 "shasum": ""
             },
             "require": {
@@ -1422,7 +1422,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.14.0"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.15.0"
             },
             "funding": [
                 {
@@ -1434,7 +1434,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-17T14:13:20+00:00"
+            "time": "2024-01-28T23:22:08+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7984,6 +7984,49 @@
             "time": "2024-01-19T10:58:30+00:00"
         },
         {
+            "name": "smeghead/php-vendor-credits",
+            "version": "dev-support-symfony-6.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/k2tzumi/php-vendor-credits.git",
+                "reference": "8c13c5b27dc65008217f05edc7132284ac12b48d"
+            },
+            "require": {
+                "symfony/console": "^5.4|^6.4"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.6"
+            },
+            "bin": [
+                "bin/php-vendor-credits"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Smeghead\\PhpVendorCredits\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "php vendor/bin/phpunit --colors test/"
+                ],
+                "phpstan": [
+                    "vendor/bin/phpstan analyse"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "smeghead"
+                }
+            ],
+            "description": "php-vendor-creadits creates CREDITS file from LICENSE files of dependencies",
+            "time": "2024-01-29T16:01:52+00:00"
+        },
+        {
             "name": "spatie/backtrace",
             "version": "1.5.3",
             "source": {
@@ -8897,7 +8940,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "smeghead/php-vendor-credits": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
