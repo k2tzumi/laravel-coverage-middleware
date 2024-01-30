@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.3...0.0.4) - 2024-01-30
+### Other Changes
+- Fix typo by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/14
+- Setup php-vendor-credits by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/16
+- Fix PHP version in tagpr flow by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/17
+- Bump up version php-vendor-credits by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/18
+- Update composer.json during tagpr workflow by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/19
+
 ## [0.0.3](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.2...0.0.3) - 2024-01-28
 ### Other Changes
 - Add badge by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/8
