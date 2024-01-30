@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37af2071ca1fda50031d84f42f4b0f93",
+    "content-hash": "74b374fe2115311db20efbb93fd83157",
     "packages": [
         {
             "name": "brick/math",
@@ -7929,16 +7929,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.19.2",
+            "version": "0.19.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "bc96a99895bf47c6bfe70ea1b799f0081ed5a903"
+                "reference": "89c895d127b9d248d2af007068a824b5348ef81f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/bc96a99895bf47c6bfe70ea1b799f0081ed5a903",
-                "reference": "bc96a99895bf47c6bfe70ea1b799f0081ed5a903",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/89c895d127b9d248d2af007068a824b5348ef81f",
+                "reference": "89c895d127b9d248d2af007068a824b5348ef81f",
                 "shasum": ""
             },
             "require": {
@@ -7973,7 +7973,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.19.2"
+                "source": "https://github.com/rectorphp/rector/tree/0.19.5"
             },
             "funding": [
                 {
@@ -7981,15 +7981,21 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-19T10:58:30+00:00"
+            "time": "2024-01-29T23:53:47+00:00"
         },
         {
             "name": "smeghead/php-vendor-credits",
-            "version": "dev-support-symfony-6.4",
+            "version": "v0.0.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/k2tzumi/php-vendor-credits.git",
-                "reference": "8c13c5b27dc65008217f05edc7132284ac12b48d"
+                "url": "https://github.com/smeghead/php-vendor-credits.git",
+                "reference": "ad2be6f7e653cbd5c666d230254719f37293a254"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smeghead/php-vendor-credits/zipball/ad2be6f7e653cbd5c666d230254719f37293a254",
+                "reference": "ad2be6f7e653cbd5c666d230254719f37293a254",
+                "shasum": ""
             },
             "require": {
                 "symfony/console": "^5.4|^6.4"
@@ -8007,14 +8013,7 @@
                     "Smeghead\\PhpVendorCredits\\": "src/"
                 }
             },
-            "scripts": {
-                "test": [
-                    "php vendor/bin/phpunit --colors test/"
-                ],
-                "phpstan": [
-                    "vendor/bin/phpstan analyse"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8024,7 +8023,11 @@
                 }
             ],
             "description": "php-vendor-creadits creates CREDITS file from LICENSE files of dependencies",
-            "time": "2024-01-29T16:01:52+00:00"
+            "support": {
+                "issues": "https://github.com/smeghead/php-vendor-credits/issues",
+                "source": "https://github.com/smeghead/php-vendor-credits/tree/v0.0.3"
+            },
+            "time": "2024-01-30T01:01:35+00:00"
         },
         {
             "name": "spatie/backtrace",
@@ -8940,9 +8943,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "smeghead/php-vendor-credits": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
