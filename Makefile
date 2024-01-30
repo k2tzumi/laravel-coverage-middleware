@@ -67,6 +67,7 @@ phpstan: $(PHPSTAN_STATUS) ## Run PHPStan with current project
 credits: $(CREDITS_OBJ)	## Create CREDITS
 
 prerelease_for_tagpr:	## Change files just before release
+	@composer config $(TAGPR_NEXT_VERSION)
 	@composer update
 	@vendor/bin/php-vendor-credits . > $(CREDITS_OBJ)
 	@git add CHANGELOG.md composer.json composer.lock $(CREDITS_OBJ)
