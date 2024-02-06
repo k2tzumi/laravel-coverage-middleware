@@ -10,7 +10,7 @@
         "illuminate/http": "^9.0|^10.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.20",
+        "orchestra/testbench": "^7.40|^8.20",
         "friendsofphp/php-cs-fixer": "^3.46",
         "phpstan/phpstan": "^1.10",
         "smeghead/php-vendor-credits": "^0.0.4"
