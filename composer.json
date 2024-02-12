@@ -5,12 +5,11 @@
     "version": "0.0.4",
     "require": {
         "php": "^8.2|^8.3",
-        "illuminate/support": "^10.0|^11.0",
-        "phpunit/phpunit": "^10.0",
-        "illuminate/http": "^10.0|^11.0"
+        "laravel/framework": "^10.0|^11.0",
+        "phpunit/phpunit": "^10.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.20|^9.0",
+        "orchestra/testbench": "^8.0|^9.0",
         "friendsofphp/php-cs-fixer": "^3.46",
         "phpstan/phpstan": "^1.10",
         "smeghead/php-vendor-credits": "^0.0.4"
@@ -74,5 +73,7 @@
             "phpstan.neon",
             "phpunit.xml"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

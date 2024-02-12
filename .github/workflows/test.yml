@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         php: ['8.2','8.3']
-        laravel: ['10.0', '11.0']
+        laravel: ['^10.0', '^11.0']
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -26,11 +26,10 @@ jobs:
           ini-values: pcov.directory=src
         env:
           update: true
-
+  
       - name: Fixing the version of Laravel
         run: |
-          composer require "illuminate/support:^${{ matrix.laravel }}" --no-interaction --no-update --ansi
-          composer require "illuminate/http:^${{ matrix.laravel }}" --no-interaction --no-update --ansi
+          composer require "laravel/framework=${{ matrix.laravel }}" --no-update --no-interaction --no-progress --ansi
 
       - name: Get Composer Cache Directory
         id: get-composer-cache-dir
@@ -55,5 +54,5 @@ jobs:
         run: composer coverage
 
       - name: Report code coverage
-        if: matrix.php == '8.2' && matrix.laravel == '9.0'
+        if: matrix.php == '8.2' && matrix.laravel == '^10.0'
         uses: k1LoW/octocov-action@v0
