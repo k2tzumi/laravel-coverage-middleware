@@ -22,7 +22,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          tools: composer:v2
+          tools: composer:v2.7
           ini-values: pcov.directory=src
         env:
           update: true
