@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.5](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.4...0.0.5) - 2024-03-08
+### Other Changes
+- Testing by Laravel version by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/20
+
 ## [0.0.4](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.3...0.0.4) - 2024-01-30
 ### Other Changes
 - Fix typo by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/14
