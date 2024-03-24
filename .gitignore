@@ -25,3 +25,4 @@ Homestead.json
 composer.zip
 .phpstan
 .fixer-diff.status
+composer.lock
