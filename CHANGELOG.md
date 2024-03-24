@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.6](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.5...0.0.6) - 2024-03-24
+### Other Changes
+- use ramsey/composer-install by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/22
+- bump up dev version by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/24
+
 ## [0.0.5](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.4...0.0.5) - 2024-03-08
 ### Other Changes
 - Testing by Laravel version by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/20
