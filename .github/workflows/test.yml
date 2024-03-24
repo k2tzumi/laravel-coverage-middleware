@@ -41,4 +41,4 @@ jobs:
 
       - name: Report code coverage
         if: matrix.php == '8.2' && matrix.laravel == '^10.0'
-        uses: k1LoW/octocov-action@v0
+        uses: k1LoW/octocov-action@v1
