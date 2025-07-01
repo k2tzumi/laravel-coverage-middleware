@@ -71,6 +71,7 @@ class CollectCodeCoverage
         if (is_array($json) === false) {
             return $next($request);
         }
+        /** @var string $requestId */
         $requestId = $json['id'] ?? '';
         $runbookId = strstr($requestId, '?', true);
         if ($runbookId === false) {
