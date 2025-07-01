@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.0.7](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.6...0.0.7) - 2025-07-01
+### Other Changes
+- [update] expand PHP and Laravel version support in workflows and composer by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/25
+
 ## [0.0.6](https://github.com/k2tzumi/laravel-coverage-middleware/compare/0.0.5...0.0.6) - 2024-03-24
 ### Other Changes
 - use ramsey/composer-install by @k2tzumi in https://github.com/k2tzumi/laravel-coverage-middleware/pull/22
