@@ -5,7 +5,7 @@ on:
 jobs:
   tests:
     name: PHP ${{ matrix.php }} / Laravle ${{ matrix.laravel }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}-test-${{ matrix.php }}-${{ matrix.laravel }}
       cancel-in-progress: true
@@ -40,5 +40,5 @@ jobs:
         run: composer coverage
 
       - name: Report code coverage
-        if: matrix.php == '8.2' && matrix.laravel == '^10.0'
+        if: matrix.php == '8.4' && matrix.laravel == '^12.0'
         uses: k1LoW/octocov-action@v1
