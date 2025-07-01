@@ -2,7 +2,7 @@
     "name": "k2tzumi/laravel-coverage-middleware",
     "description": "HTTP middleware to get code coverage of Laravel applications on remote servers",
     "type": "library",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "require": {
         "php": "^8.2|^8.3|^8.4",
         "laravel/framework": "^10.0|^11.0|^12.0",
